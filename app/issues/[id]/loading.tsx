@@ -1,4 +1,4 @@
-import { Skeleton } from "@/app/components";
+import { Skeleton } from "@/app/_components";
 import { Box, Card, Flex } from "@radix-ui/themes";
 
 const loading = () => {
