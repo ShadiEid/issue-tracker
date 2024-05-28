@@ -7,11 +7,11 @@ const IssueDetials = ({ issue }: { issue: Issue }) => {
   return (
     <>
       <Heading>{issue?.title}</Heading>
-      <Flex align={"center"} gapX={"3"} my={"2"}>
+      <Flex className="space-x-3" align={"center"} gapX={"3"} my={"2"}>
         <IssueStatusBadge status={issue?.status} />
         <Text>{issue?.createdAt.toDateString()}</Text>
       </Flex>
-      <Card className="prose">
+      <Card className="prose max-w-full" mt={"4"}>
         <Markdown>{issue?.description}</Markdown>
       </Card>
     </>
