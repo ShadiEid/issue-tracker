@@ -13,7 +13,7 @@ const AssigneeSelect = () => {
     error,
   } = useQuery<User[]>({
     queryKey: ["users"],
-    queryFn: () => axios.get<User[]>("/sapi/users").then((res) => res.data),
+    queryFn: () => axios.get<User[]>("/api/users").then((res) => res.data),
     staleTime: 60 * 1000, //60s
     retry: 3,
   });
