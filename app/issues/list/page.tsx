@@ -39,9 +39,18 @@ const IssuesPage = async ({ searchParams }: Props) => {
       }
     : undefined;
 
+  const where = { status };
+  const page = parseInt(searchParams.page) || 1;
+  const pageSize = 10;
   const issues = await prisma.issue.findMany({
-    where: { status },
+    where,
     orderBy,
+    skip: (page - 1) * pageSize,
+    take: pageSize,
+  });
+
+  const itemCount = await prisma.issue.count({
+    where,
   });
 
   return (
@@ -97,9 +106,9 @@ const IssuesPage = async ({ searchParams }: Props) => {
         </Table.Body>
       </Table.Root>
       <Pagination
-        itemCount={100}
-        pageSize={10}
-        currentPage={parseInt(searchParams.page)}
+        itemCount={itemCount}
+        pageSize={pageSize}
+        currentPage={page}
       />
     </div>
   );
