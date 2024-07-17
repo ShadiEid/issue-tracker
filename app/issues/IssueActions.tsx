@@ -5,7 +5,7 @@ const IssueActions = () => {
   return (
     <div>
       <Button>
-        <Link href={"/issues/new"}>Create new issue</Link>
+        <Link href={"/issues/new"}>New issue</Link>
       </Button>
     </div>
   );
