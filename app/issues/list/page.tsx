@@ -1,11 +1,7 @@
-import prisma from "@/prisma/client";
-import { Table } from "@radix-ui/themes";
-import { IssueStatusBadge, Link } from "../../_components";
-import IssueActions from "./IssueActions";
-import { Issue, Status } from "@prisma/client";
-import { ArrowDownIcon, ArrowUpIcon } from "@radix-ui/react-icons";
 import Pagination from "@/app/_components/Pagination";
-import { useSearchParams } from "next/navigation";
+import prisma from "@/prisma/client";
+import { Status } from "@prisma/client";
+import IssueActions from "./IssueActions";
 import IssueTable, { columnNames, IssueQuery } from "./IssueTable";
 
 interface Props {
