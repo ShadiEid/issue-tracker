@@ -13,7 +13,7 @@ const LatestIssues = async () => {
   });
 
   return (
-    <Card>
+    <Card style={{ width: "100%" }}>
       <Heading size={"4"} mb={"5"}>
         Latest Issues
       </Heading>
